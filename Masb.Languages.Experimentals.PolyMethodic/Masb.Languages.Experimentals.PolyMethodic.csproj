@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{07AE1175-B6CF-4AAE-9C73-0724D45FBA95}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Masb.Languages.Experimentals.PolyMethodic</RootNamespace>
+    <AssemblyName>Masb.Languages.Experimentals.PolyMethodic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.34.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Collections.Immutable.1.1.34-rc\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeMap.cs" />
+    <Compile Include="Documentation.cs" />
+    <Compile Include="INamespaceOrTypeSymbol.cs" />
+    <Compile Include="Parser\BlockStatementNode.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Parser\ClassNode.cs" />
+    <Compile Include="Parser\FileNode.cs" />
+    <Compile Include="Parser\IExpressionNode.cs" />
+    <Compile Include="Parser\IMemberNode.cs" />
+    <Compile Include="Parser\IStatementNode.cs" />
+    <Compile Include="Parser\LiteralExpressionNode.cs" />
+    <Compile Include="Parser\MethodFlags.cs" />
+    <Compile Include="Parser\MethodNode.cs" />
+    <Compile Include="Parser\Parser.cs" />
+    <Compile Include="Parser\ReturnStatementNode.cs" />
+    <Compile Include="Parser\SplitStatementNode.cs" />
+    <Compile Include="Tokenizer\EndFileToken.cs" />
+    <Compile Include="Tokenizer\IdentifierOrKeywordToken.cs" />
+    <Compile Include="Tokenizer\NumberToken.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tokenizer\SpaceToken.cs" />
+    <Compile Include="Tokenizer\StartFileToken.cs" />
+    <Compile Include="Tokenizer\StringToken.cs" />
+    <Compile Include="Tokenizer\SymbolToken.cs" />
+    <Compile Include="Tokenizer\Token.cs" />
+    <Compile Include="Tokenizer\Tokenizer.cs" />
+    <Compile Include="Tokenizer\TokenSubtype.cs" />
+    <Compile Include="Tokenizer\TokenType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Linker\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
