@@ -42,12 +42,19 @@ public class Main
             //  and scopes are still unresolved.
             var fileAst = Lang.Parse(tokens);
 
-            // Create a semantic model by
-            //  resolving scope elements, and then
-            //  linking identifiers to declarations.
-            var module = Lang.Link(
+            // Create a model with definitions,
+            //  and a map between them and their originating
+            //  sintatic elements.
+            var module = Lang.Define(
+                "Test",
                 new[] { fileAst },
-                new ModuleScope[] { new SystemModule() });
+                new[] { new ModuleImportSymbol("System", new SystemModule()) });
+
+            // Creates links between
+            //  definers, referrers and referred definitions,
+            //  by resolving scope elements, and then
+            //  linking identifiers to declarations.
+            var links = Lang.Link(module);
 
             // Create the documentation.
             var docs = module.GetDocumentation();
@@ -76,7 +83,7 @@ public class Main
             //  code represented by the compilation method,
             //  by using the Executor converter.
             var executor = Lang.Convert(
-                (MethodSymbol)optimizedCompilation.FindType("Main").FindMember("MultipleInts"),
+                (MethodDefinition)optimizedCompilation.FindType("Main").Members["MultipleInts"],
                 new Executor<Func<IEnumerable<int>>>());
 
             // Calls the executor and gets the list of

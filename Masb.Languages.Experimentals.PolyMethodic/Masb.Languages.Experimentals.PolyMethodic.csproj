@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="CodeMap.cs" />
     <Compile Include="Documentation.cs" />
-    <Compile Include="INamespaceOrTypeSymbol.cs" />
+    <Compile Include="INamespaceItemDefinition.cs" />
     <Compile Include="Parser\BlockStatementNode.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Parser\ClassNode.cs" />
@@ -59,6 +59,7 @@
     <Compile Include="Parser\Parser.cs" />
     <Compile Include="Parser\ReturnStatementNode.cs" />
     <Compile Include="Parser\SplitStatementNode.cs" />
+    <Compile Include="Parser\VariableDeclarationStatementNode.cs" />
     <Compile Include="Tokenizer\EndFileToken.cs" />
     <Compile Include="Tokenizer\IdentifierOrKeywordToken.cs" />
     <Compile Include="Tokenizer\NumberToken.cs" />
@@ -77,6 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

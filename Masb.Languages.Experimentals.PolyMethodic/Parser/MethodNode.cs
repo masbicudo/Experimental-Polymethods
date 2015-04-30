@@ -7,7 +7,7 @@ namespace Masb.Languages.Experimentals.PolyMethodic
     public class MethodNode :
         IMemberNode
     {
-        public IdentifierOrKeywordToken Name { get; private set; }
+        public Token Name { get; private set; }
 
         public IdentifierOrKeywordToken Type { get; private set; }
 

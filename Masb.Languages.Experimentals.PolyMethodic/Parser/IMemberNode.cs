@@ -2,5 +2,6 @@
 {
     public interface IMemberNode
     {
+        Token Name { get; }
     }
 }
